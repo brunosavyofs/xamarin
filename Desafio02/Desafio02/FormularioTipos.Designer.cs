@@ -63,10 +63,10 @@
             this.txbMinValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txbMinValue.Location = new System.Drawing.Point(140, 66);
-            this.txbMinValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbMinValue.Margin = new System.Windows.Forms.Padding(4);
             this.txbMinValue.Name = "txbMinValue";
             this.txbMinValue.ReadOnly = true;
-            this.txbMinValue.Size = new System.Drawing.Size(183, 22);
+            this.txbMinValue.Size = new System.Drawing.Size(256, 22);
             this.txbMinValue.TabIndex = 2;
             // 
             // txbMaxValue
@@ -74,10 +74,10 @@
             this.txbMaxValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txbMaxValue.Location = new System.Drawing.Point(140, 98);
-            this.txbMaxValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbMaxValue.Margin = new System.Windows.Forms.Padding(4);
             this.txbMaxValue.Name = "txbMaxValue";
             this.txbMaxValue.ReadOnly = true;
-            this.txbMaxValue.Size = new System.Drawing.Size(183, 22);
+            this.txbMaxValue.Size = new System.Drawing.Size(256, 22);
             this.txbMaxValue.TabIndex = 3;
             // 
             // grpValores
@@ -91,10 +91,10 @@
             this.grpValores.Controls.Add(this.txbMinValue);
             this.grpValores.Controls.Add(this.cmbTipoVariavel);
             this.grpValores.Location = new System.Drawing.Point(16, 21);
-            this.grpValores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpValores.Margin = new System.Windows.Forms.Padding(4);
             this.grpValores.Name = "grpValores";
-            this.grpValores.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpValores.Size = new System.Drawing.Size(347, 146);
+            this.grpValores.Padding = new System.Windows.Forms.Padding(4);
+            this.grpValores.Size = new System.Drawing.Size(420, 146);
             this.grpValores.TabIndex = 4;
             this.grpValores.TabStop = false;
             this.grpValores.Text = "Limites das variáveis";
@@ -116,22 +116,23 @@
             this.cmbTipoVariavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoVariavel.FormattingEnabled = true;
             this.cmbTipoVariavel.Location = new System.Drawing.Point(140, 33);
-            this.cmbTipoVariavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoVariavel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoVariavel.Name = "cmbTipoVariavel";
-            this.cmbTipoVariavel.Size = new System.Drawing.Size(183, 24);
+            this.cmbTipoVariavel.Size = new System.Drawing.Size(256, 24);
             this.cmbTipoVariavel.TabIndex = 5;
             this.cmbTipoVariavel.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVariavel_SelectedIndexChanged);
             // 
-            // Form1
+            // FormularioTipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 193);
+            this.ClientSize = new System.Drawing.Size(450, 193);
             this.Controls.Add(this.grpValores);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.MinimumSize = new System.Drawing.Size(468, 240);
+            this.Name = "FormularioTipos";
             this.Text = "Desafio 02";
             this.grpValores.ResumeLayout(false);
             this.grpValores.PerformLayout();

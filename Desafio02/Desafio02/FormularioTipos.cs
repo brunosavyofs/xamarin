@@ -20,11 +20,14 @@ namespace Desafio02
             cmbTipoVariavel.Items.Add(new Item("byte", byte.MaxValue, byte.MinValue));
             cmbTipoVariavel.Items.Add(new Item("sbyte", sbyte.MaxValue, sbyte.MinValue));
             cmbTipoVariavel.Items.Add(new Item("short", short.MaxValue, short.MinValue));
+            cmbTipoVariavel.Items.Add(new Item("ushort", ushort.MaxValue, ushort.MinValue));
             cmbTipoVariavel.Items.Add(new Item("long", long.MaxValue, long.MinValue));
             cmbTipoVariavel.Items.Add(new Item("ulong", ulong.MaxValue, ulong.MinValue));
             cmbTipoVariavel.Items.Add(new Item("int", int.MaxValue, int.MinValue));
             cmbTipoVariavel.Items.Add(new Item("uint", uint.MaxValue, uint.MinValue));
             cmbTipoVariavel.Items.Add(new Item("double", double.MaxValue, double.MinValue));
+            cmbTipoVariavel.Items.Add(new Item("float", float.MaxValue, float.MinValue));
+            cmbTipoVariavel.Items.Add(new Item("decimal", decimal.MaxValue, decimal.MinValue));
             #endregion
         }
 
