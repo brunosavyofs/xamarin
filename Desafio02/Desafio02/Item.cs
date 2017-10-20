@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Desafio02
+﻿namespace Desafio02
 {
     class Item
     {
+        #region Declaração de atributos
         public string descricao;
         public object valMax;
         public object valMin;
+        #endregion
 
         /// <summary>
         /// Construtor da classe Item

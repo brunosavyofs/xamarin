@@ -1,6 +1,6 @@
 ﻿namespace Desafio02
 {
-    partial class Form1
+    partial class FormularioTipos
     {
         /// <summary>
         /// Variável de designer necessária.
