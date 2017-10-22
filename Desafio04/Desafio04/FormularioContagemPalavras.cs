@@ -10,14 +10,14 @@ namespace Desafio04
     {
         #region Propriedades
         // Dicionário com a estrutura <palavra, quantidade> para guardar a quantidade de cada palavra no texto
-        private Dictionary<string, int> contagem = new Dictionary<string, int>();
+        private Dictionary<string, int> ContagemPalavras = new Dictionary<string, int>();
 
         // Caracteres que serão ignorados no texto
-        List<char> caracteresIndevidos = new List<char> { ';', '.', ',', '[', ']', '{', '}', '/', '*', '+', '-', '~', '^', '´',
+        List<char> CaracteresIndevidos = new List<char> { ';', '.', ',', '[', ']', '{', '}', '/', '*', '+', '-', '~', '^', '´',
             '`', '(', ')', '=', '&', '¨', '%', '$', '#', '@', '!', '\"', '\'' };
 
         // Caracteres que delimitam a separação entre as palavras
-        List<char> caracteresSeparadores = new List<char> { ' ', '\n', '\r', '\t' };
+        List<char> CaracteresSeparadores = new List<char> { ' ', '\n', '\r', '\t' };
         #endregion
 
         public FormContadorPalavras()
@@ -36,7 +36,7 @@ namespace Desafio04
             String textoProcessado = texto;
 
             // Percorre lista de caracteres que se quer remover, substituindo suas ocorrências por espaço
-            foreach (char caracter in this.caracteresIndevidos)
+            foreach (char caracter in this.CaracteresIndevidos)
             {
                 textoProcessado = textoProcessado.Replace(caracter, ' ');
             }
@@ -54,7 +54,7 @@ namespace Desafio04
 
             // Percorre o dicionário de palavras ordenado pelo valor, que é a quantidade de aparições desta palavra no texto, de maneira descrescente
             // Desta maneira, palavras que aparecem mais vezes são incluídas primeiro no textbox de resultado
-            foreach (KeyValuePair<string, int> palavra in contagem.OrderByDescending(key => key.Value))
+            foreach (KeyValuePair<string, int> palavra in ContagemPalavras.OrderByDescending(key => key.Value))
             {
                 txbResultadoContagem.AppendText(String.Format("{0}: {1}", palavra.Key, palavra.Value));
                 txbResultadoContagem.AppendText("\n");
@@ -67,23 +67,23 @@ namespace Desafio04
         private void ContarPalavras()
         {
             // Limpa dicionário de contagem
-            contagem.Clear();
+            ContagemPalavras.Clear();
 
             // Retira caracteres que não representam uma palavra
             String textoProcessado = RetirarCaracteresIndevidos(txbTexto.Text);
 
             // Quebra o texto pelos caracteres separadores desconsiderando as entradas vazias e percorrendo as que restarem
-            foreach (String palavra in textoProcessado.Split(caracteresSeparadores.ToArray<char>(), StringSplitOptions.RemoveEmptyEntries))
+            foreach (String palavra in textoProcessado.Split(CaracteresSeparadores.ToArray<char>(), StringSplitOptions.RemoveEmptyEntries))
             {
                 // Utiliza a versão minúscula da palavra
                 String palavra_minuscula = palavra.ToLower();
 
                 // Caso a palavra ainda não esteja no dicionário de contagem, inicializa contador
-                if (!contagem.ContainsKey(palavra_minuscula))
-                    contagem[palavra_minuscula] = 0;
+                if (!ContagemPalavras.ContainsKey(palavra_minuscula))
+                    ContagemPalavras[palavra_minuscula] = 0;
 
                 // Incrementa contador de palavras dentro do dicionário
-                contagem[palavra_minuscula] += 1;
+                ContagemPalavras[palavra_minuscula] += 1;
             }
         }
         #endregion

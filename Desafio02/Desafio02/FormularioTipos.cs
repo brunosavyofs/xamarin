@@ -35,8 +35,8 @@ namespace Desafio02
         {
             #region Atribui os valores máximo e mínimo do tipo aos campos correspondentes no formulário
             Item item = (Item)cmbTipoVariavel.SelectedItem;
-            txbMaxValue.Text = item.valMax.ToString();
-            txbMinValue.Text = item.valMin.ToString();
+            txbMaxValue.Text = item.ValMax.ToString();
+            txbMinValue.Text = item.ValMin.ToString();
             #endregion
         }
     }

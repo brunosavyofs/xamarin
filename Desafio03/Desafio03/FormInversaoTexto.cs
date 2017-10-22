@@ -13,7 +13,7 @@ namespace Desafio03
     public partial class FormInversaoTexto : Form
     {
         // Caracteres a serem removidos do texto
-        List<Char> caracteresRemover = new List<Char> { ';', '.', '!', '?', ',', ' '};
+        List<Char> CaracteresRemover = new List<Char> { ';', '.', '!', '?', ',', ' '};
 
         public FormInversaoTexto()
         {
@@ -32,7 +32,7 @@ namespace Desafio03
             for (int i = textoOriginal.Count() - 1; i >= 0; i--)
             {
                 // Se o caracter estiver na lista a remover, desconsidera-o
-                if (!caracteresRemover.Contains(textoOriginal[i]))
+                if (!CaracteresRemover.Contains(textoOriginal[i]))
                     textoInvertido += textoOriginal[i];
             }
 

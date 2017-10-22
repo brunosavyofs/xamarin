@@ -5,18 +5,18 @@ namespace SUED
 {
     class Program
     {
-        #region Declaração de constantes e variáveis
-        private const int SEGUNDOS_PENSANDO = 3;
+        #region Declaração de atributos
+        private const int SegundosPensando = 3;
 
-        private const string fraseSaudacao = "Espelho, espelho meu, me responda ";
-        private const string fraseSolicitacaoPergunta = "Faça qualquer pergunta (Pressione <<END>> para encerrar): ";
-        private const string fraseRespostaNaoInformada = " estou cansado agora, não posso te responder.";
+        private const string FraseSaudacao = "Espelho, espelho meu, me responda ";
+        private const string FraseSolicitacaoPergunta = "Faça qualquer pergunta (Pressione <<END>> para encerrar): ";
+        private const string FraseRespostaNaoInformada = " estou cansado agora, não posso te responder.";
 
-        private const char caracterInicioCapturaResposta = ';';
-        private const ConsoleKey teclaEncerraCapturaResposta = ConsoleKey.Enter;
-        private const ConsoleKey teclaEncerraPerguntas = ConsoleKey.End;
+        private const char CaracterInicioCapturaResposta = ';';
+        private const ConsoleKey TeclaEncerraCapturaResposta = ConsoleKey.Enter;
+        private const ConsoleKey TeclaEncerraPerguntas = ConsoleKey.End;
 
-        private static string resposta = "";
+        private static string Resposta = "";
         #endregion
 
         static void Main(string[] args)
@@ -34,16 +34,16 @@ namespace SUED
         /// </summary>
         private static void Perguntar()
         {
-            Console.WriteLine(fraseSolicitacaoPergunta);
+            Console.WriteLine(FraseSolicitacaoPergunta);
 
             // Captura a tecla pressionada
             ConsoleKeyInfo key = Console.ReadKey(true);
 
-            if (key.KeyChar == caracterInicioCapturaResposta)
+            if (key.KeyChar == CaracterInicioCapturaResposta)
             {
                 // Caso inicie com ';', captura a resposta
                 CapturarResposta();
-            } else if (key.Key == teclaEncerraPerguntas)
+            } else if (key.Key == TeclaEncerraPerguntas)
             {
                 // Caso a tecla END tenha sido pressionada, encerra o programa
                 Environment.Exit(1);
@@ -54,22 +54,6 @@ namespace SUED
         }
 
         /// <summary>
-        /// Escreve a resposta na tela e reseta a variável contendo a resposta digitada
-        /// </summary>
-        private static void Responder()
-        {
-            if (resposta == "")
-            {
-                Console.WriteLine("{0}", fraseRespostaNaoInformada);
-            } else
-            {
-                Console.WriteLine(" => {0} <=", resposta);
-            }
-            Console.WriteLine();
-            resposta = "";
-        }
-
-        /// <summary>
         /// Captura a resposta da pergunta enquanto exibe a saudação na tela.
         /// Ao ser pressionada a tecla ';', a captura será iniciada.
         /// Ao ser pressionada a tecla ENTER, a captura será encerrada.
@@ -77,12 +61,12 @@ namespace SUED
         /// </summary>
         private static void CapturarResposta()
         {
-            for (var i = 0; i < fraseSaudacao.Length; i++)
+            for (var i = 0; i < FraseSaudacao.Length; i++)
             {
                 // Captura a tecla pressionada
                 ConsoleKeyInfo key = Console.ReadKey(true);
 
-                if (key.Key == teclaEncerraCapturaResposta)
+                if (key.Key == TeclaEncerraCapturaResposta)
                 {
                     // Caso o ENTER tenha sido pressionado, encerra captura da resposta
                     break;
@@ -90,11 +74,27 @@ namespace SUED
                 else
                 {
                     // Se não for a tecla ENTER, continua capturando a resposta
-                    resposta += key.KeyChar;
+                    Resposta += key.KeyChar;
                 }
 
-                Console.Write(fraseSaudacao[i]);
+                Console.Write(FraseSaudacao[i]);
             }
+        }
+
+        /// <summary>
+        /// Escreve a resposta na tela e reseta a variável contendo a resposta digitada
+        /// </summary>
+        private static void Responder()
+        {
+            if (Resposta == "")
+            {
+                Console.WriteLine("{0}", FraseRespostaNaoInformada);
+            } else
+            {
+                Console.WriteLine(" => {0} <=", Resposta);
+            }
+            Console.WriteLine();
+            Resposta = "";
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace SUED
                 Console.Write(".");
                 Thread.Sleep(1000);
                 x++;
-            } while (x < SEGUNDOS_PENSANDO);
+            } while (x < SegundosPensando);
         }
     }
 }

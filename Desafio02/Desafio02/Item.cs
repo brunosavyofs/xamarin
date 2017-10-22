@@ -3,9 +3,9 @@
     class Item
     {
         #region Declaração de atributos
-        public string descricao;
-        public object valMax;
-        public object valMin;
+        public string Descricao;
+        public object ValMax;
+        public object ValMin;
         #endregion
 
         /// <summary>
@@ -16,14 +16,14 @@
         /// <param name="valMin">Valor mínimo do tipo de variável</param>
         public Item(string descricao, object valMax, object valMin)
         {
-            this.descricao = descricao;
-            this.valMax = valMax;
-            this.valMin = valMin;
+            this.Descricao = descricao;
+            this.ValMax = valMax;
+            this.ValMin = valMin;
         }
 
         public override string ToString()
         {
-            return descricao;
+            return Descricao;
         }
     }
 }
