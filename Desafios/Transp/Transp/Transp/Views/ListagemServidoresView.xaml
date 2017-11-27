@@ -4,25 +4,28 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Transp"
-    Title="Selecione o servidor">
+    Title="Lista de Servidores">
 
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <StackLayout
-            Padding="6"
+        <ActivityIndicator
             AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            Orientation="Horizontal">
-            <ActivityIndicator
-                IsRunning="{Binding Carregando}"
-                IsVisible="{Binding Carregando}"
-                VerticalOptions="Center" />
-        </StackLayout>
+            IsRunning="{Binding Carregando}"
+            IsVisible="{Binding Carregando}"
+            VerticalOptions="Center" />
 
         <ListView
             x:Name="listViewServidores"
             Margin="20"
+            HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Servidores}"
             SelectedItem="{Binding ServidorSelecionado}">
+
+            <ListView.Header>
+                <StackLayout Padding="10,5,0,10">
+                    <Label FontSize="Medium" Text="Selecione o servidor" />
+                </StackLayout>
+            </ListView.Header>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -30,12 +33,17 @@
                         <ViewCell.View>
 
                             <StackLayout
-                                Margin="20,0,0,0"
+                                Margin="20,10,0,10"
                                 HorizontalOptions="FillAndExpand"
-                                Orientation="Horizontal">
+                                Orientation="Vertical">
                                 <Label
                                     HorizontalOptions="StartAndExpand"
                                     Text="{Binding Servidor}"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    FontSize="Micro"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="{Binding Cargo}"
                                     VerticalTextAlignment="Center" />
                             </StackLayout>
 

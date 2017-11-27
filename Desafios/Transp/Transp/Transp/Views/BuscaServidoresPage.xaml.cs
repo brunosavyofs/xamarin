@@ -40,7 +40,7 @@ namespace Transp.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<String>(this, "BuscaServidores");
+            MessagingCenter.Unsubscribe<ParametrosBusca>(this, "BuscaServidores");
         }
 
         public void OnAboutToolbarItem_Clicked(object sender, EventArgs e)
