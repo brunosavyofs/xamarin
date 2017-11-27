@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Transp.Views.ListagemServidoresView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Transp"
+    Title="Selecione o servidor">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout
+            Padding="6"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Orientation="Horizontal">
+            <ActivityIndicator
+                IsRunning="{Binding Carregando}"
+                IsVisible="{Binding Carregando}"
+                VerticalOptions="Center" />
+        </StackLayout>
+
+        <ListView
+            x:Name="listViewServidores"
+            Margin="20"
+            ItemsSource="{Binding Servidores}"
+            SelectedItem="{Binding ServidorSelecionado}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+
+                            <StackLayout
+                                Margin="20,0,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
+                                <Label
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="{Binding Servidor}"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </AbsoluteLayout>
+
+</ContentPage>

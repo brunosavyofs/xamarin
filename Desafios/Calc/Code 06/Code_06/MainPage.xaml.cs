@@ -20,7 +20,7 @@ namespace Code_06
         #region Demais propriedades auxiliares
         string operador = OperadorSoma;
 
-        float ultimoNumero = 0;
+        Double ultimoNumero = 0;
 
         // Flag que informa que é para capturar novo número
         bool capturaNovoNumero = true;
@@ -153,10 +153,10 @@ namespace Code_06
         {
             capturaNovoNumero = true;
 
-            float resultado = 0;
+            Double resultado = 0;
 
             // Atribui o número do visor à variável que guarda o número digitado
-            float numeroAtual = float.Parse(lblNumero.Text, CultureInfo.InvariantCulture);
+            Double numeroAtual = Convert.ToDouble(lblNumero.Text, CultureInfo.InvariantCulture);
 
             // Realiza a operação com base no operador selecionado
             switch (operador)
@@ -180,7 +180,7 @@ namespace Code_06
             if (modoCapturaOperador)
                 ultimoNumero = numeroAtual;
 
-            lblNumero.Text = resultado.ToString();
+            lblNumero.Text = Convert.ToString(resultado, CultureInfo.InvariantCulture);
 
             modoCapturaOperador = false;
             mostrandoResultado = true;

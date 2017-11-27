@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Transp.Views.BuscaServidoresPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Busca de Servidores">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="aboutToolbarItem"
+            Clicked="OnAboutToolbarItem_Clicked"
+            Text="?" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="15">
+
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Informe os parâmetros de busca">
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="13,0" Orientation="Horizontal">
+                                <Picker
+                                    x:Name="pickerSecretarias"
+                                    Title="Selecione a secretaria"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemsSource="{Binding Secretarias}"
+                                    SelectedItem="{Binding Secretaria}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="13,0" Orientation="Horizontal">
+                                <Picker
+                                    x:Name="pickerMes"
+                                    Title="Selecione o mês"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemDisplayBinding="{Binding Nome}"
+                                    ItemsSource="{Binding Meses}"
+                                    SelectedItem="{Binding Mes}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="13,0" Orientation="Horizontal">
+                                <Picker
+                                    x:Name="pickerAno"
+                                    Title="Selecione o ano"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemsSource="{Binding Anos}"
+                                    SelectedItem="{Binding Ano}" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Button
+            x:Name="buttonBusca"
+            Command="{Binding BuscaServidores}"
+            Text="Listar Servidores" />
+    </StackLayout>
+</ContentPage>
