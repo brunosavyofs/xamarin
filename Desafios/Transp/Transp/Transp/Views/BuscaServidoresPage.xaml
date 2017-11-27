@@ -12,56 +12,40 @@
             Text="?" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Padding="15">
-
-        <TableView Intent="Form">
-            <TableRoot>
-                <TableSection Title="Informe os parâmetros de busca">
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout Padding="13,0" Orientation="Horizontal">
-                                <Picker
-                                    x:Name="pickerSecretarias"
-                                    Title="Selecione a secretaria"
-                                    HorizontalOptions="FillAndExpand"
-                                    ItemsSource="{Binding Secretarias}"
-                                    SelectedItem="{Binding Secretaria}" />
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout Padding="13,0" Orientation="Horizontal">
-                                <Picker
-                                    x:Name="pickerMes"
-                                    Title="Selecione o mês"
-                                    HorizontalOptions="FillAndExpand"
-                                    ItemDisplayBinding="{Binding Nome}"
-                                    ItemsSource="{Binding Meses}"
-                                    SelectedItem="{Binding Mes}" />
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout Padding="13,0" Orientation="Horizontal">
-                                <Picker
-                                    x:Name="pickerAno"
-                                    Title="Selecione o ano"
-                                    HorizontalOptions="FillAndExpand"
-                                    ItemsSource="{Binding Anos}"
-                                    SelectedItem="{Binding Ano}" />
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </TableView>
+    <StackLayout
+        Margin="10,50,10,0"
+        HorizontalOptions="Center"
+        VerticalOptions="Start">
+        <Image Source="Icon.png" />
+        <Label
+            Margin="0,0,0,20"
+            FontSize="Medium"
+            Text="Informe os parâmetros de pesquisa"
+            TextColor="#FF4081" />
+        <Picker
+            x:Name="pickerSecretarias"
+            Title="Selecione a secretaria de lotação"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding Secretarias}"
+            SelectedItem="{Binding Secretaria}" />
+        <Picker
+            x:Name="pickerMes"
+            Title="Selecione o mês da folha"
+            HorizontalOptions="FillAndExpand"
+            ItemDisplayBinding="{Binding Nome}"
+            ItemsSource="{Binding Meses}"
+            SelectedItem="{Binding Mes}" />
+        <Picker
+            x:Name="pickerAno"
+            Title="Selecione o ano da folha"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding Anos}"
+            SelectedItem="{Binding Ano}" />
+        <!--  entrar  -->
 
         <Button
             x:Name="buttonBusca"
+            Margin="0,20,0,0"
             Command="{Binding BuscaServidores}"
             Text="Listar Servidores" />
     </StackLayout>

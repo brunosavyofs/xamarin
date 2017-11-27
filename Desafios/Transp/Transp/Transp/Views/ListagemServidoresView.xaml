@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Transp"
-    Title="Lista de Servidores">
+    Title="Servidores encontrados">
 
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ActivityIndicator
@@ -19,11 +19,16 @@
             Margin="20"
             HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Servidores}"
-            SelectedItem="{Binding ServidorSelecionado}">
+            RowHeight="50"
+            SelectedItem="{Binding ServidorSelecionado}"
+            VerticalOptions="FillAndExpand">
 
             <ListView.Header>
-                <StackLayout Padding="10,5,0,10">
-                    <Label FontSize="Medium" Text="Selecione o servidor" />
+                <StackLayout Padding="5,5,0,15" IsVisible="{Binding !Carregando}">
+                    <Label
+                        FontSize="Medium"
+                        Text="Selecione o servidor"
+                        TextColor="#FF4081" />
                 </StackLayout>
             </ListView.Header>
 
@@ -33,9 +38,10 @@
                         <ViewCell.View>
 
                             <StackLayout
-                                Margin="20,10,0,10"
+                                Margin="15,0,0,0"
                                 HorizontalOptions="FillAndExpand"
-                                Orientation="Vertical">
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
                                 <Label
                                     HorizontalOptions="StartAndExpand"
                                     Text="{Binding Servidor}"
