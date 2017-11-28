@@ -49,10 +49,6 @@ namespace Transp.Views
         public void OnAboutToolbarItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AboutPage());
-            //DisplayAlert("Sobre o aplicativo", "Este trabalho foi desenvolvido por Bruno Savyo de Freitas Silva " + 
-            //    "para a disciplina de Xamarim do curso de especialização em Desenvolvimento de Aplicativos para Dispositivos Móveis " + 
-            //    "da Faculdade Católica do Tocantins. \n Trata-se de aplicativo que consome API disponibilizada pela Prefeitura de Palmas " + 
-            //    "através de seu portal da transparência para obtenção de dados sobre folha de pagamento.", "OK");
         }
 
         #endregion
