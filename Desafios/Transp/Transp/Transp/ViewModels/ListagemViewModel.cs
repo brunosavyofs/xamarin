@@ -51,6 +51,21 @@ namespace Transp.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        // Propriedade responsável por controlar a exibição de mensagem de que não foi encontrado servidor
+        private bool _sem_resultados;
+        public bool SemResultados
+        {
+            get {
+                return _sem_resultados;
+            }
+            set
+            {
+                _sem_resultados = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
         public ListagemViewModel(ParametrosBusca parametros)
@@ -61,18 +76,13 @@ namespace Transp.ViewModels
             this.ParametrosBusca = parametros;
         }
 
-        //public void OnPropertyChanged([CallerMemberName]string name = "")
-        //{
-        //    // Notifica a view da alteração na propriedade
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        //}
-
         /// <summary>
         /// Busca os anos disponíveis e preenche a lista com o resultado da requisição.
         /// </summary>
         /// <returns>lista de anos</returns>
         public async Task GetServidores()
         {
+            this.SemResultados = false;
             if (this.Servidores.Count == 0)
             {
                 // Exibe indicativo de atividade
@@ -82,6 +92,10 @@ namespace Transp.ViewModels
                 {
                     this.Servidores.Add(servidor);
                 }
+
+                // Se não tiver encontrado nenhum servidor, altera valor da propriedade de controle para avisar usuário
+                if (this.Servidores.Count == 0)
+                    this.SemResultados = true;
 
                 //Esconde indicativo de atividade
                 Carregando = false;

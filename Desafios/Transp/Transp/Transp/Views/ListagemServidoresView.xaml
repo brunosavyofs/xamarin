@@ -13,15 +13,24 @@
             IsRunning="{Binding Carregando}"
             IsVisible="{Binding Carregando}"
             VerticalOptions="Center" />
+        <Label
+            Margin="20,100,0,0"
+            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            FontSize="Medium"
+            IsVisible="{Binding SemResultados}"
+            Text="Não foi encontrado nenhum servidor"
+            VerticalOptions="Start" />
 
         <ListView
             x:Name="listViewServidores"
             Margin="20"
+            AbsoluteLayout.LayoutBounds="1, 1, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
             HorizontalOptions="FillAndExpand"
             ItemsSource="{Binding Servidores}"
             RowHeight="50"
-            SelectedItem="{Binding ServidorSelecionado}"
-            VerticalOptions="FillAndExpand">
+            SelectedItem="{Binding ServidorSelecionado}">
 
             <ListView.Header>
                 <StackLayout Padding="5,5,0,15" IsVisible="{Binding !Carregando}">
