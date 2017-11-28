@@ -100,10 +100,11 @@ namespace Transp.ViewModels
         /// <returns>lista de secretarias</returns>
         public async Task GetSecretarias()
         {
-            foreach (String secretaria in new ObservableCollection<String>(await this.apiService.BuscaSecretarias()))
-            {
-                this.Secretarias.Add(secretaria);
-            }
+            if (this.Secretarias.Count == 0)
+                foreach (String secretaria in new ObservableCollection<String>(await this.apiService.BuscaSecretarias()))
+                {
+                    this.Secretarias.Add(secretaria);
+                }
         }
 
         /// <summary>
@@ -112,9 +113,12 @@ namespace Transp.ViewModels
         /// <returns>lista de anos</returns>
         public async Task GetAnos()
         {
-            foreach (int ano in new ObservableCollection<int>(await this.apiService.BuscaAnos()))
+            if (this.Anos.Count == 0)
             {
-                this.Anos.Add(ano);
+                foreach (int ano in new ObservableCollection<int>(await this.apiService.BuscaAnos()))
+                {
+                    this.Anos.Add(ano);
+                }
             }
         }
         #endregion
