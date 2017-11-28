@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BuscaServidoresViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DadosServidorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListagemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\BuscaServidoresPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

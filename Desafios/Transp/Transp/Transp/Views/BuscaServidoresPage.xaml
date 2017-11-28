@@ -13,13 +13,14 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout
-        Margin="10,50,10,0"
+        Margin="0,30,10,0"
         HorizontalOptions="Center"
         VerticalOptions="Start">
         <Image Source="Icon.png" />
         <Label
-            Margin="0,0,0,20"
-            FontSize="Medium"
+            Margin="0,30,0,20"
+            FontSize="Small"
+            HorizontalOptions="Center"
             Text="Informe os parâmetros de pesquisa"
             TextColor="#FF4081" />
         <Picker

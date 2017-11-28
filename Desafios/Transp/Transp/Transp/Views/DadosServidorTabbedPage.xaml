@@ -6,30 +6,110 @@
     Title="Dados do Servidor">
 
     <ContentPage Title="Cadastro">
-        <StackLayout Padding="15" Orientation="Horizontal">
-            <Label Text="{Binding ServidorSelecionado.Matricula}" VerticalTextAlignment="Center" />
-            <Label Text=" + " VerticalTextAlignment="Center" />
-            <Label Text="{Binding ServidorSelecionado.Nome}" VerticalTextAlignment="Center" />
+
+        <StackLayout Padding="15">
+
+            <Label
+                Margin="0,10,5,0"
+                FontSize="Small"
+                Text="Matrícula"
+                TextColor="#FF4081" />
+            <Label Margin="15,0,0,0" Text="{Binding ServidorSelecionado.Matricula}" />
+
+            <Label
+                Margin="0,10,5,0"
+                FontSize="Small"
+                Text="Nome"
+                TextColor="#FF4081" />
+            <Label Margin="15,0,0,0" Text="{Binding ServidorSelecionado.Servidor}" />
+
+            <Label
+                Margin="0,10,5,0"
+                FontSize="Small"
+                Text="Vinculo"
+                TextColor="#FF4081" />
+            <Label Margin="15,0,0,0" Text="{Binding ServidorSelecionado.Vinculo}" />
+
+            <Label
+                Margin="0,10,5,0"
+                FontSize="Small"
+                Text="Cargo"
+                TextColor="#FF4081" />
+            <Label Margin="15,0,0,0" Text="{Binding ServidorSelecionado.Cargo}" />
+
+            <Label
+                Margin="0,10,5,0"
+                FontSize="Small"
+                Text="Setor"
+                TextColor="#FF4081" />
+            <Label Margin="15,0,0,0" Text="{Binding ServidorSelecionado.Setor}" />
+
         </StackLayout>
+
     </ContentPage>
 
     <ContentPage Title="Financeiro">
 
-        <StackLayout Padding="15" Orientation="Horizontal">
-            <TableView Intent="Data">
-                <TableRoot>
-                    <TableSection Title="Rendimentos">
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoBase}" />
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoOutros}" />
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoFerias}" />
-                    </TableSection>
-                    <TableSection Title="Descontos">
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoBase}" />
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoOutros}" />
-                        <TextCell Text="{Binding ServidorSelecionado.VencimentoFerias}" />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+        <StackLayout Padding="15">
+
+            <Label
+                Margin="0,15,5,5"
+                Text="Vencimentos"
+                TextColor="#FF4081" />
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Vencimento Base:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.VencimentoBaseFormatado}" />
+            </StackLayout>
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Vencimento de Férias:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.VencimentoFeriasFormatado}" />
+            </StackLayout>
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Outros Vencimentos:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.VencimentoOutrosFormatado}" />
+            </StackLayout>
+            <BoxView
+                Margin="15,0,0,0"
+                HeightRequest="1"
+                WidthRequest="150"
+                Color="#FF4081" />
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Total de proventos:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.ValorRendimentoFormatado}" />
+            </StackLayout>
+
+            <Label
+                Margin="0,15,5,5"
+                Text="Descontos"
+                TextColor="#FF4081" />
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Desconto de Previdência:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.DescontoPrevipalmasFormatado}" />
+            </StackLayout>
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Desconto de IRRF:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.DescontoIrrfFormatado}" />
+            </StackLayout>
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Outros Descontos:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.DescontoOutrosFormatado}" />
+            </StackLayout>
+            <BoxView
+                Margin="15,0,0,0"
+                HeightRequest="1"
+                WidthRequest="150"
+                Color="#FF4081" />
+            <StackLayout Margin="15,0,0,5" Orientation="Horizontal">
+                <Label HorizontalOptions="StartAndExpand" Text="Total de descontos:" />
+                <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.ValorDescontosFormatado}" />
+            </StackLayout>
+
+            <Label
+                Margin="0,15,5,5"
+                Text="Valor Líquido"
+                TextColor="#FF4081" />
+            <Label HorizontalOptions="End" Text="{Binding ServidorSelecionado.ValorRendimentoLiquidoFormatado}" />
         </StackLayout>
+        <!--</StackLayout>-->
     </ContentPage>
 </TabbedPage>
