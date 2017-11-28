@@ -25,6 +25,7 @@ namespace Transp.Views
         {
             base.OnAppearing();
 
+            // Inscreve o código abaixo para tratar a mensagem/ação "ServidorSelecionado"
             MessagingCenter.Subscribe<ServidorObj>(this, "ServidorSelecionado", (msg) =>
             {
                 Navigation.PushAsync(new DadosServidorTabbedPage(msg));
@@ -37,6 +38,7 @@ namespace Transp.Views
         {
             base.OnDisappearing();
 
+            // Cancela a inscrição
             MessagingCenter.Unsubscribe<ServidorObj>(this, "ServidorSelecionado");
         }
     }

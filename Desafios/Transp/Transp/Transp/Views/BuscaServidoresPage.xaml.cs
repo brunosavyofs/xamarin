@@ -23,12 +23,14 @@ namespace Transp.Views
             this.BindingContext = this.ViewModel;
         }
 
+        #region Eventos
         protected async override void OnAppearing()
         {
             base.OnAppearing();
 
             MessagingCenter.Subscribe<ParametrosBusca>(this, "BuscaServidores", (parametros) =>
             {
+                // Inscreve o código abaixo para tratar a mensagem/ação "BuscaServidores"
                 Navigation.PushAsync(new ListagemServidoresView(parametros));
             });
 
@@ -40,15 +42,19 @@ namespace Transp.Views
         {
             base.OnDisappearing();
 
+            // Cancela subscrição
             MessagingCenter.Unsubscribe<ParametrosBusca>(this, "BuscaServidores");
         }
 
         public void OnAboutToolbarItem_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Sobre o aplicativo", "Este trabalho foi desenvolvido por Bruno Savyo de Freitas Silva " + 
-                "para a disciplina de Xamarim do curso de especialização em Desenvolvimento de Aplicativos para Dispositivos Móveis " + 
-                "da Faculdade Católica do Tocantins. \n Trata-se de aplicativo que consome API disponibilizada pela Prefeitura de Palmas " + 
-                "através de seu portal da transparência para obtenção de dados sobre folha de pagamento.", "OK");
+            Navigation.PushAsync(new AboutPage());
+            //DisplayAlert("Sobre o aplicativo", "Este trabalho foi desenvolvido por Bruno Savyo de Freitas Silva " + 
+            //    "para a disciplina de Xamarim do curso de especialização em Desenvolvimento de Aplicativos para Dispositivos Móveis " + 
+            //    "da Faculdade Católica do Tocantins. \n Trata-se de aplicativo que consome API disponibilizada pela Prefeitura de Palmas " + 
+            //    "através de seu portal da transparência para obtenção de dados sobre folha de pagamento.", "OK");
         }
+
+        #endregion
     }
 }

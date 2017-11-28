@@ -6,18 +6,6 @@
     <Application.Resources>
 
         <!--  Application resource dictionary  -->
-        <ResourceDictionary>
-            <Color x:Key="backgroundColor">#33302E</Color>
-            <Color x:Key="textColor">White</Color>
-
-            <Style x:Key="linhaFinanceiro" TargetType="StackLayout">
-                <Setter Property="Margin" Value="15,5,0,5" />
-                <Setter Property="Orientation" Value="Horizontal" />
-            </Style>
-            <Style x:Key="backgroundStyle" TargetType="VisualElement">
-                <Setter Property="BackgroundColor" Value="{StaticResource backgroundColor}" />
-            </Style>
-        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

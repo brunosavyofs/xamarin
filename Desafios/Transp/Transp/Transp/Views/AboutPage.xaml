@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Transp.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout Padding="50">
+            <Label
+                Margin="20"
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                Text="Sobre o aplicativo"
+                VerticalOptions="Start" />
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Este trabalho foi desenvolvido por Bruno Savyo de Freitas Silva para a disciplina de Xamarim do curso de especialização em Desenvolvimento de Aplicativos para Dispositivos Móveis da Faculdade Católica do Tocantins."
+                VerticalOptions="Center" />
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Trata-se de aplicativo que consome API disponibilizada pela Prefeitura de Palmas através de seu portal da transparência para obtenção de dados sobre folha de pagamento."
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

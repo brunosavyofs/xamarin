@@ -21,7 +21,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BuscaServidoresViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DadosServidorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListagemViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\BuscaServidoresPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BuscaServidoresPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
