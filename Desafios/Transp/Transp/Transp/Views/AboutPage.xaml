@@ -18,7 +18,7 @@
             <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="Trata-se de aplicativo que consome API disponibilizada pela Prefeitura de Palmas através de seu portal da transparência para obtenção de dados sobre folha de pagamento."
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
